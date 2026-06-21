@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Father's Day Daddy ❤️</title>
+    <title>Happy Father's Day, Daddy! ❤️</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,6 +23,13 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* Particles & Crackers Layer */
+        .particle { position: absolute; pointer-events: none; border-radius: 50%; animation: explode 0.8s ease-out forwards; z-index: 999; }
+        @keyframes explode {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+        }
+
         .bg-heart {
             position: absolute; bottom: -50px; pointer-events: none;
             animation: floatUp 5s linear infinite; opacity: 0.15; font-size: 24px; z-index: 1;
@@ -32,13 +39,13 @@
             100% { transform: translateY(-115vh) rotate(360deg) scale(1.3); opacity: 0; }
         }
 
-        /* Glassmorphic Surprise Card */
+        /* Glassmorphic Master Card */
         .surprise-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 35px 24px; border-radius: 32px;
+            padding: 30px 22px; border-radius: 32px;
             box-shadow: 0 25px 55px rgba(255, 77, 109, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.6);
-            width: 92%; max-width: 365px; min-height: 460px;
+            width: 92%; max-width: 365px; min-height: 480px;
             display: none; flex-direction: column; justify-content: center; align-items: center;
             position: relative; z-index: 5; border: 2px solid rgba(255, 255, 255, 0.7); text-align: center;
         }
@@ -53,95 +60,214 @@
             to { transform: scale(1) translateY(0); opacity: 1; } 
         }
 
-        /* Elements Styling */
-        .big-gift-emoji { font-size: 5rem; margin-bottom: 20px; animation: bounceGlow 1.4s infinite ease-in-out; }
-        @keyframes bounceGlow { 0% { transform: scale(1); } 50% { transform: scale(1.12); } 100% { transform: scale(1); } }
-
-        .avatar-box { width: 90px; height: 90px; background: linear-gradient(135deg, #fff0f3, #ffe6eb); border-radius: 50%; margin-bottom: 18px; display: flex; justify-content: center; align-items: center; font-size: 3rem; box-shadow: 0 10px 22px rgba(255, 77, 109, 0.12); border: 2px solid #fff; }
-        h2 { font-size: 1.5rem; color: #1e293b; margin-bottom: 15px; font-weight: 800; }
+        /* Reusable Components */
+        .icon-art { font-size: 4.5rem; margin-bottom: 15px; animation: smoothBounce 1.5s infinite ease-in-out; display: inline-block; }
+        @keyframes smoothBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
-        .wish-box { background: #fffcfd; border: 2px dashed #ffccd5; border-radius: 20px; width: 100%; padding: 18px; margin-bottom: 22px; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.02); text-align: center; }
-        p { color: #334155; font-size: 0.98rem; line-height: 1.6; font-weight: 500; font-style: italic; }
+        h2 { font-size: 1.45rem; color: #1e293b; margin-bottom: 12px; font-weight: 800; }
+        
+        .msg-box { background: #fffcfd; border: 2px dashed #ffccd5; border-radius: 20px; width: 100%; padding: 16px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.02); }
+        .msg-box p { color: #334155; font-size: 0.95rem; line-height: 1.6; font-weight: 500; font-style: italic; }
 
         .btn { 
             background: linear-gradient(135deg, #ff4d79 0%, #ff1a53 50%, #e6003e 100%); 
-            color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; 
+            color: white; border: none; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; 
             box-shadow: 0 6px 20px rgba(255, 26, 83, 0.3); transition: all 0.2s;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto;
         }
         .btn:active { transform: scale(0.97); }
+        .gold-btn { background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%); color: #4a3b00; font-weight: 800; box-shadow: 0 6px 20px rgba(255, 170, 0, 0.3); }
 
-        .gold-btn {
-            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
-            color: #4a3b00; font-weight: 800; box-shadow: 0 6px 20px rgba(255, 170, 0, 0.3);
-        }
+        /* Interactive Cake Cutting Styles */
+        .cake-container { position: relative; width: 160px; height: 160px; margin: 15px 0; cursor: pointer; }
+        .cake-emoji { font-size: 6rem; transition: transform 0.3s; }
+        .knife-emoji { position: absolute; top: -10px; right: -10px; font-size: 2.5rem; animation: waveKnife 1s infinite alternate; pointer-events: none; }
+        @keyframes waveKnife { from { transform: rotate(0deg); } to { transform: rotate(-25deg); } }
+        .cake-cut-line { position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: transparent; border-left: 4px dashed #ff1a53; display: none; }
 
-        /* Secret Voucher Layout */
-        .voucher-box {
-            background: #e6fffa; border: 2px solid #319795; color: #234e52;
-            padding: 20px 15px; border-radius: 22px; width: 100%; font-weight: 800;
-            font-size: 1.05rem; box-shadow: 0 10px 25px rgba(49, 151, 149, 0.1);
-        }
+        /* Final Certificate Styles */
+        .voucher-box { background: #e6fffa; border: 2px solid #319795; color: #234e52; padding: 18px 12px; border-radius: 20px; width: 100%; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 25px rgba(49, 151, 149, 0.1); line-height: 1.5; }
     </style>
 </head>
 <body>
 
-    <div class="surprise-card active" id="step1">
-        <div class="big-gift-emoji">🎁✨</div>
-        <h2 style="font-size: 1.6rem;">Daddy, Aapke Liye Ek Surprise Hai!</h2>
-        <p style="margin-bottom: 25px; font-style: normal; color: #64748b;">Niche diye button par click karke box ko unlock karein...</p>
-        <button class="btn" onclick="goToStep('step1', 'step2')">
-            Open Surprise Box 🔓
-        </button>
+    <div class="surprise-card active" id="p1">
+        <div class="icon-art" style="font-size: 5.5rem;">🎁✨</div>
+        <h2>Daddy, Aapke Liye Ek Special Surprise Hai!</h2>
+        <div class="msg-box" style="border:none; background:none; box-shadow:none;">
+            <p style="font-style:normal; color:#64748b;">Is special day ko celebrate karne ke liye niche diye box ko tap karke kholiye...</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(1, 2)">Open Magic Box 🔓</button>
     </div>
 
-    <div class="surprise-card" id="step2">
-        <div class="avatar-box">👨‍👦❤️</div>
-        <h2>Happy Father's Day, Daddy! 🎉</h2>
+    <div class="surprise-card" id="p2">
+        <div class="icon-art">🦸‍♂️✨</div>
+        <h2>Duniya Ke Sabse Cool Daddy!</h2>
+        <div class="msg-box">
+            <p>"Daddy, bina pankh ke bhi jo udna sikhate hain, mushkilon me jo dhaal ban kar khade ho jaate hain... Wo sirf aap ho! Happy Father's Day!"</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(2, 3)">Aage Chalein 👉</button>
+    </div>
+
+    <div class="surprise-card" id="p3">
+        <div class="icon-art" style="animation:none; font-size:1.8rem; margin-bottom:5px;">🎂✨</div>
+        <h2>Chaliye Cake Kaat te Hain!</h2>
+        <p style="font-size:0.85rem; color:#64748b; margin-bottom:10px;">Cake par click karke use celebrate karein:</p>
         
-        <div class="wish-box">
-            <p>
-                "Daddy, aapne humesha hamari khushiyon ko apni khushiyon se upar rakha hai. Aapka gussa hona bhi hamare liye fikar hi hoti hai. Thank you hamare super-hero banne ke liye! Aap duniya ke sabse best Daddy ho." ❤️✨
+        <div class="cake-container" onclick="cutCakeAndProceed()">
+            <div class="cake-emoji" id="cakeElement">🎂</div>
+            <div class="knife-emoji" id="knifeElement">🔪</div>
+            <div class="cake-cut-line" id="cakeLine"></div>
+        </div>
+        
+        <div id="cakeStatusText" style="font-weight:700; color:#ff1a53; font-size:0.9rem;">Tap Cake to Cut!</div>
+    </div>
+
+    <div class="surprise-card" id="p4">
+        <div class="icon-art">⚠️😈</div>
+        <h2>Danger: High Cute Gussa!</h2>
+        <div class="msg-box">
+            <p>"Humein pata hai jab hum thodi badmashi karte hain toh aapko gussa aata hai... Par aapka gussa bhi duniya ka sabse pyaara aur sweet gussa hai!" 🫶❤️</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(4, 5)">Next Surprise 🌟</button>
+    </div>
+
+    <div class="surprise-card" id="p5">
+        <div class="icon-art">👨‍👦💖</div>
+        <h2>Aap Best Ho, Daddy!</h2>
+        <div class="wish-box msg-box">
+            <p>"Daddy, aapne humesha hamari khushiyon ko apni khushiyon se upar rakha hai. Aapka gussa hona bhi hamare liye fikar hi hoti hai. Thank you hamare super-hero banne ke liye! Aap duniya ke sabse best Daddy ho." ❤️✨</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(5, 6)">Abhi Aur Bhi Hai 😉</button>
+    </div>
+
+    <div class="surprise-card" id="p6">
+        <div class="icon-art">💡🌟</div>
+        <h2>Aapki Seekh, Hamari Taaqat</h2>
+        <div class="msg-box">
+            <p>"Zindagi me sahi aur galat ka farq aapne sikhaya, jab bhi hum dare ya ladkhadaye, aapne humesha ungli pakad kar chalna sikhaya. Thank you Daddy!"</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(6, 7)">Keep Going 🚀</button>
+    </div>
+
+    <div class="surprise-card" id="p7">
+        <div class="icon-art">🧐📜</div>
+        <h2>Did You Know, Daddy?</h2>
+        <div class="msg-box" style="background:#fff5f5; border-color:#ff9aa2;">
+            <p style="color:#b71c1c; font-weight:700; font-style:normal;">
+                *Google search and global surveys report:*<br><br>
+                "Poore brahmand me aapke jitna shaandar, caring aur badhiya chai lover Daddy dusra koi milna namumkin hai!" 🌌💯
             </p>
         </div>
-
-        <button class="btn gold-btn" onclick="goToStep('step2', 'step3')">
-            Claim Ultimate Reward 👑
-        </button>
+        <button class="btn" onclick="triggerCelebration(7, 8)">Chai Special Screen ☕</button>
     </div>
 
-    <div class="surprise-card" id="step3">
-        <div class="avatar-box" style="font-size: 3.5rem;">👑🏆</div>
-        <h2 style="color: #b7791f; margin-bottom: 8px;">Official Certificate</h2>
-        <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #a0aec0; margin-bottom: 15px;">Elite Tier Unlocked</p>
+    <div class="surprise-card" id="p8">
+        <div class="icon-art">☕⚡</div>
+        <h2>Unconditional Chai Treat!</h2>
+        <div class="msg-box">
+            <p>"Aapke liye ek special unlimited garam-garam kadak chai ka quota lock kar diya gaya hai, jise aap jab chahein order kar sakte hain!"</p>
+        </div>
+        <button class="btn" onclick="triggerCelebration(8, 9)">Get Official Honor 🏆</button>
+    </div>
+
+    <div class="surprise-card" id="p9">
+        <div class="icon-art" style="font-size: 5rem;">🏆👑</div>
+        <h2>No. 1 Dad Certificate</h2>
+        <div class="msg-box" style="background:#fffdf0; border-color:#ffd700;">
+            <p style="color:#744210; font-weight:800; font-style:normal;">
+                This certifies that Daddy is officially decorated with the title of "World's Shield & Best Supporter Ever"!
+            </p>
+        </div>
+        <button class="btn gold-btn" onclick="triggerCelebration(9, 10)">Claim Grand Reward 🎉</button>
+    </div>
+
+    <div class="surprise-card" id="p10">
+        <div class="icon-art" style="font-size: 4rem;">🎟️✨</div>
+        <h2 style="color: #319795;">Grand Prize Box Unlocked!</h2>
         
         <div class="voucher-box">
-            🎉 BEST DADDY VOUCHER 🎉<br>
-            <span style="font-size: 0.88rem; font-weight: 500; display:block; margin-top: 10px; color: #2d3748; font-style: normal; line-height: 1.5;">
-                This voucher entitles Daddy to 1 Full Day of Zero Kich-Kich + Unconditional Chai Service & Unlimited Love forever! ☕❤️
+            🎉 PREMIUM DADDY VOUCHER 🎉<br>
+            <span style="font-size: 0.88rem; font-weight: 500; display:block; margin-top: 12px; color: #2d3748; font-style: normal;">
+                This voucher entitles Daddy to 1 Full Day of Zero Kich-Kich + Premium VIP Chai Service & Unlimited Love forever! ☕❤️
             </span>
         </div>
-        
-        <p style="font-size: 0.8rem; color: #718096; margin-top: 15px; margin-bottom: 0; font-style: normal;">
-            *Non-transferable and valid life-time!
+        <p style="font-size: 0.78rem; color: #718096; margin-top: 20px; font-style: normal; font-weight:600;">
+            *Non-transferable | Life-time Validity Verified ✨
         </p>
     </div>
 
     <script>
-        // Custom Step Navigation Engine
-        function goToStep(currentId, nextId) {
-            document.getElementById(currentId).classList.remove('active');
-            document.getElementById(nextId).classList.add('active');
+        // Smooth Navigation Engine with Pataka (Fireworks) Blast Effect
+        function triggerCelebration(currStep, nextStep) {
+            createFireworkBlast();
+            document.getElementById('p' + currStep).classList.remove('active');
+            document.getElementById('p' + nextStep).classList.add('active');
         }
 
-        // Background Decorative Floating Elements
+        // Real-time Crackers / Pataka Burst Mechanism
+        function createFireworkBlast() {
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                
+                // Random dynamic coordinates
+                const x = (Math.random() - 0.5) * 300;
+                const y = (Math.random() - 0.5) * 300;
+                p.style.setProperty('--x', `${x}px`);
+                p.style.setProperty('--y', `${y}px`);
+                
+                // Random colors for crackers
+                const colors = ['#ff1a53', '#ffd700', '#319795', '#ff4d79', '#00e5ff', '#ff007f'];
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random size & origin positioning
+                const size = Math.random() * 8 + 6;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = '50%';
+                p.style.top = '50%';
+                
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 800);
+            }
+        }
+
+        // Interactive Cake Cutting Interactive Engine
+        let cakeCutDone = false;
+        function cutCakeAndProceed() {
+            if(cakeCutDone) return;
+            cakeCutDone = true;
+            
+            const cake = document.getElementById('cakeElement');
+            const knife = document.getElementById('knifeElement');
+            const line = document.getElementById('cakeLine');
+            const txt = document.getElementById('cakeStatusText');
+            
+            knife.style.transform = 'translate(-40px, 50px) rotate(-45deg)';
+            line.style.display = 'block';
+            
+            setTimeout(() => {
+                cake.style.transform = 'scaleX(0.9)';
+                cake.innerText = '🍰🍰';
+                txt.innerText = '✨ Beautifully Cut! 🍾 🎉';
+                createFireworkBlast();
+            }, 300);
+
+            setTimeout(() => {
+                triggerCelebration(3, 4);
+            }, 1400);
+        }
+
+        // Background Ambient Floaters (Hearts, Balloons, Stars)
         function spawnHearts() {
             const p = document.createElement('div'); p.classList.add('bg-heart'); 
-            p.innerHTML = ['❤️','✨','🌸','🎈'][Math.floor(Math.random() * 4)];
+            p.innerHTML = ['❤️','✨','🌸','🎈','🎈'][Math.floor(Math.random() * 5)];
             p.style.left = Math.random() * 100 + 'vw'; p.style.animationDuration = (Math.random() * 2 + 3.5) + 's';
             document.body.appendChild(p); setTimeout(() => p.remove(), 5000);
         }
-        setInterval(spawnHearts, 500);
+        setInterval(spawnHearts, 450);
     </script>
 </body>
-</html>
+        </html>
+        

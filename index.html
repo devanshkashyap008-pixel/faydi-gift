@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Father's Day, Daddy! ❤️</title>
+    <title>हैप्पी फादर्स डे, डैडी! ❤️</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,7 +23,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Particles & Crackers Layer */
+        /* Patake & Blast Effects */
         .particle { position: absolute; pointer-events: none; border-radius: 50%; animation: explode 0.8s ease-out forwards; z-index: 999; }
         @keyframes explode {
             0% { transform: translate(0, 0) scale(1); opacity: 1; }
@@ -39,9 +39,9 @@
             100% { transform: translateY(-115vh) rotate(360deg) scale(1.3); opacity: 0; }
         }
 
-        /* Glassmorphic Master Card */
+        /* Glassmorphic Card */
         .surprise-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             padding: 30px 22px; border-radius: 32px;
             box-shadow: 0 25px 55px rgba(255, 77, 109, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.6);
@@ -60,59 +60,59 @@
             to { transform: scale(1) translateY(0); opacity: 1; } 
         }
 
-        /* Reusable Components */
+        /* Icons & Text Styling */
         .icon-art { font-size: 4.5rem; margin-bottom: 15px; animation: smoothBounce 1.5s infinite ease-in-out; display: inline-block; }
         @keyframes smoothBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
-        h2 { font-size: 1.45rem; color: #1e293b; margin-bottom: 12px; font-weight: 800; }
+        h2 { font-size: 1.5rem; color: #1e293b; margin-bottom: 15px; font-weight: 800; line-height: 1.4; }
         
-        .msg-box { background: #fffcfd; border: 2px dashed #ffccd5; border-radius: 20px; width: 100%; padding: 16px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.02); }
-        .msg-box p { color: #334155; font-size: 0.95rem; line-height: 1.6; font-weight: 500; font-style: italic; }
+        .msg-box { background: #fffcfd; border: 2px dashed #ffccd5; border-radius: 20px; width: 100%; padding: 18px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.02); }
+        .msg-box p { color: #334155; font-size: 1rem; line-height: 1.7; font-weight: 600; }
 
         .btn { 
             background: linear-gradient(135deg, #ff4d79 0%, #ff1a53 50%, #e6003e 100%); 
-            color: white; border: none; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; 
+            color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; 
             box-shadow: 0 6px 20px rgba(255, 26, 83, 0.3); transition: all 0.2s;
             display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto;
         }
         .btn:active { transform: scale(0.97); }
         .gold-btn { background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%); color: #4a3b00; font-weight: 800; box-shadow: 0 6px 20px rgba(255, 170, 0, 0.3); }
 
-        /* Interactive Cake Cutting Styles */
+        /* Cake Elements */
         .cake-container { position: relative; width: 160px; height: 160px; margin: 15px 0; cursor: pointer; }
         .cake-emoji { font-size: 6rem; transition: transform 0.3s; }
         .knife-emoji { position: absolute; top: -10px; right: -10px; font-size: 2.5rem; animation: waveKnife 1s infinite alternate; pointer-events: none; }
         @keyframes waveKnife { from { transform: rotate(0deg); } to { transform: rotate(-25deg); } }
         .cake-cut-line { position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: transparent; border-left: 4px dashed #ff1a53; display: none; }
 
-        /* Final Certificate Styles */
-        .voucher-box { background: #e6fffa; border: 2px solid #319795; color: #234e52; padding: 18px 12px; border-radius: 20px; width: 100%; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 25px rgba(49, 151, 149, 0.1); line-height: 1.5; }
+        /* Voucher layout */
+        .voucher-box { background: #e6fffa; border: 2px solid #319795; color: #234e52; padding: 22px 15px; border-radius: 20px; width: 100%; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(49, 151, 149, 0.1); line-height: 1.6; }
     </style>
 </head>
 <body>
 
     <div class="surprise-card active" id="p1">
         <div class="icon-art" style="font-size: 5.5rem;">🎁✨</div>
-        <h2>Daddy, Aapke Liye Ek Special Surprise Hai!</h2>
-        <div class="msg-box" style="border:none; background:none; box-shadow:none;">
-            <p style="font-style:normal; color:#64748b;">Is special day ko celebrate karne ke liye niche diye box ko tap karke kholiye...</p>
+        <h2>डैडी, आपके लिए एक बेहद खास सरप्राइज है!</h2>
+        <div class="msg-box" style="border:none; background:none; box-shadow:none; margin-bottom:10px;">
+            <p style="color:#64748b; font-weight:500;">इस खूबसूरत दिन को सेलिब्रेट करने के लिए नीचे दिए गए बॉक्स को खोलें...</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(1, 2)">Open Magic Box 🔓</button>
+        <button class="btn" onclick="triggerCelebration(1, 2)">जादुई बॉक्स खोलें 🔓</button>
     </div>
 
     <div class="surprise-card" id="p2">
         <div class="icon-art">🦸‍♂️✨</div>
-        <h2>Duniya Ke Sabse Cool Daddy!</h2>
+        <h2>दुनिया के सबसे कूल डैडी!</h2>
         <div class="msg-box">
-            <p>"Daddy, bina pankh ke bhi jo udna sikhate hain, mushkilon me jo dhaal ban kar khade ho jaate hain... Wo sirf aap ho! Happy Father's Day!"</p>
+            <p>"डैडी, बिना पंखों के भी जो हमें उड़ना सिखाते हैं, हमारी हर मुश्किल में जो ढाल बनकर खड़े हो जाते हैं... वो सिर्फ आप हैं डैडी!" 🫶</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(2, 3)">Aage Chalein 👉</button>
+        <button class="btn" onclick="triggerCelebration(2, 3)">आगे चलें 👉</button>
     </div>
 
     <div class="surprise-card" id="p3">
         <div class="icon-art" style="animation:none; font-size:1.8rem; margin-bottom:5px;">🎂✨</div>
-        <h2>Chaliye Cake Kaat te Hain!</h2>
-        <p style="font-size:0.85rem; color:#64748b; margin-bottom:10px;">Cake par click karke use celebrate karein:</p>
+        <h2>चलिए केक काटते हैं!</h2>
+        <p style="font-size:0.9rem; color:#64748b; margin-bottom:15px; font-weight:600;">केक के ऊपर टच करके उसे काटें:</p>
         
         <div class="cake-container" onclick="cutCakeAndProceed()">
             <div class="cake-emoji" id="cakeElement">🎂</div>
@@ -120,80 +120,80 @@
             <div class="cake-cut-line" id="cakeLine"></div>
         </div>
         
-        <div id="cakeStatusText" style="font-weight:700; color:#ff1a53; font-size:0.9rem;">Tap Cake to Cut!</div>
+        <div id="cakeStatusText" style="font-weight:800; color:#ff1a53; font-size:1rem; margin-top:10px;">केक पर क्लिक करें!</div>
     </div>
 
     <div class="surprise-card" id="p4">
         <div class="icon-art">⚠️😈</div>
-        <h2>Danger: High Cute Gussa!</h2>
+        <h2>सावधान: डैडी का प्यारा गुस्सा!</h2>
         <div class="msg-box">
-            <p>"Humein pata hai jab hum thodi badmashi karte hain toh aapko gussa aata hai... Par aapka gussa bhi duniya ka sabse pyaara aur sweet gussa hai!" 🫶❤️</p>
+            <p>"हमें पता है कि जब हम थोड़ी बदमाशी करते हैं तो आपको गुस्सा आता है... पर आपका वो गुस्सा भी दुनिया का सबसे प्यारा और मीठा गुस्सा है!" ❤️</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(4, 5)">Next Surprise 🌟</button>
+        <button class="btn" onclick="triggerCelebration(4, 5)">अगला सरप्राइज देखें 🌟</button>
     </div>
 
     <div class="surprise-card" id="p5">
         <div class="icon-art">👨‍👦💖</div>
-        <h2>Aap Best Ho, Daddy!</h2>
-        <div class="wish-box msg-box">
-            <p>"Daddy, aapne humesha hamari khushiyon ko apni khushiyon se upar rakha hai. Aapka gussa hona bhi hamare liye fikar hi hoti hai. Thank you hamare super-hero banne ke liye! Aap duniya ke sabse best Daddy ho." ❤️✨</p>
+        <h2>आप सबसे बेस्ट हो, डैडी!</h2>
+        <div class="msg-box">
+            <p>"डैडी, आपने हमेशा हमारी खुशियों को अपनी खुशियों से ऊपर रखा है। आपका गुस्सा होना भी हमारे लिए फिक्र ही होती है। थैंक यू हमारे सुपर-हीरो बनने के लिए! आप दुनिया के सबसे बेस्ट डैडी हो।" ❤️✨</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(5, 6)">Abhi Aur Bhi Hai 😉</button>
+        <button class="btn" onclick="triggerCelebration(5, 6)">अभी और भी है 😉</button>
     </div>
 
     <div class="surprise-card" id="p6">
         <div class="icon-art">💡🌟</div>
-        <h2>Aapki Seekh, Hamari Taaqat</h2>
+        <h2>आपकी सीख, हमारी ताकत</h2>
         <div class="msg-box">
-            <p>"Zindagi me sahi aur galat ka farq aapne sikhaya, jab bhi hum dare ya ladkhadaye, aapne humesha ungli pakad kar chalna sikhaya. Thank you Daddy!"</p>
+            <p>"जिंदगी में सही और गलत का फर्क आपने सिखाया। जब भी हम डरे या लड़खड़ाए, आपने हमेशा उंगली पकड़कर आगे बढ़ना सिखाया। थैंक यू डैडी!"</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(6, 7)">Keep Going 🚀</button>
+        <button class="btn" onclick="triggerCelebration(6, 7)">आगे बढ़ें 🚀</button>
     </div>
 
     <div class="surprise-card" id="p7">
         <div class="icon-art">🧐📜</div>
-        <h2>Did You Know, Daddy?</h2>
+        <h2>क्या आपको पता है, डैडी?</h2>
         <div class="msg-box" style="background:#fff5f5; border-color:#ff9aa2;">
-            <p style="color:#b71c1c; font-weight:700; font-style:normal;">
-                *Google search and global surveys report:*<br><br>
-                "Poore brahmand me aapke jitna shaandar, caring aur badhiya chai lover Daddy dusra koi milna namumkin hai!" 🌌💯
+            <p style="color:#b71c1c; font-weight:800;">
+                *गूगल सर्च और ग्लोबल सर्वे की रिपोर्ट:*<br><br>
+                "पूरे ब्रह्मांड में आपके जितना शानदार, केयरिंग और बढ़िया चाय लवर डैडी दूसरा कोई मिलना बिल्कुल नामुमकिन है!" 🌌💯
             </p>
         </div>
-        <button class="btn" onclick="triggerCelebration(7, 8)">Chai Special Screen ☕</button>
+        <button class="btn" onclick="triggerCelebration(7, 8)">चाय स्पेशल स्क्रीन देखें ☕</button>
     </div>
 
     <div class="surprise-card" id="p8">
         <div class="icon-art">☕⚡</div>
-        <h2>Unconditional Chai Treat!</h2>
+        <h2>अनलिमिटेड चाय का तोहफा!</h2>
         <div class="msg-box">
-            <p>"Aapke liye ek special unlimited garam-garam kadak chai ka quota lock kar diya gaya hai, jise aap jab chahein order kar sakte hain!"</p>
+            <p>"आपके लिए एक स्पेशल और अनलिमिटेड गरम-गरम कड़क चाय का कोटा लॉक कर दिया गया है, जिसे आप जब चाहें हमसे ऑर्डर कर सकते हैं!"</p>
         </div>
-        <button class="btn" onclick="triggerCelebration(8, 9)">Get Official Honor 🏆</button>
+        <button class="btn" onclick="triggerCelebration(8, 9)">अवार्ड हासिल करें 🏆</button>
     </div>
 
     <div class="surprise-card" id="p9">
         <div class="icon-art" style="font-size: 5rem;">🏆👑</div>
-        <h2>No. 1 Dad Certificate</h2>
+        <h2>नंबर 1 डैडी सर्टिफिकेट</h2>
         <div class="msg-box" style="background:#fffdf0; border-color:#ffd700;">
-            <p style="color:#744210; font-weight:800; font-style:normal;">
-                This certifies that Daddy is officially decorated with the title of "World's Shield & Best Supporter Ever"!
+            <p style="color:#744210; font-weight:800;">
+                "यह प्रमाणित किया जाता है कि डैडी को आधिकारिक तौर पर 'दुनिया के सबसे बेस्ट सपोर्टर और रक्षक' की उपाधि दी जाती है!"
             </p>
         </div>
-        <button class="btn gold-btn" onclick="triggerCelebration(9, 10)">Claim Grand Reward 🎉</button>
+        <button class="btn gold-btn" onclick="triggerCelebration(9, 10)">महा पुरस्कार क्लेम करें 🎉</button>
     </div>
 
     <div class="surprise-card" id="p10">
         <div class="icon-art" style="font-size: 4rem;">🎟️✨</div>
-        <h2 style="color: #319795;">Grand Prize Box Unlocked!</h2>
+        <h2 style="color: #319795;">ग्रैंड प्राइज बॉक्स अनलॉक!</h2>
         
         <div class="voucher-box">
-            🎉 PREMIUM DADDY VOUCHER 🎉<br>
-            <span style="font-size: 0.88rem; font-weight: 500; display:block; margin-top: 12px; color: #2d3748; font-style: normal;">
-                This voucher entitles Daddy to 1 Full Day of Zero Kich-Kich + Premium VIP Chai Service & Unlimited Love forever! ☕❤️
+            🎉 प्रीमियम डैडी वाउचर 🎉<br>
+            <span style="font-size: 0.92rem; font-weight: 600; display:block; margin-top: 12px; color: #2d3748;">
+                यह वाउचर डैडी को पूरे 1 दिन के लिए "जीरो किच-किच + अनकंडीशनल वीआईपी चाय सर्विस और ढेर सारा प्यार" का हकदार बनाता है! ☕❤️
             </span>
         </div>
-        <p style="font-size: 0.78rem; color: #718096; margin-top: 20px; font-style: normal; font-weight:600;">
-            *Non-transferable | Life-time Validity Verified ✨
+        <p style="font-size: 0.8rem; color: #718096; margin-top: 20px; font-weight:700;">
+            *यह लाइफ-टाइम के लिए वैलिड और बिल्कुल फ्री है! ✨
         </p>
     </div>
 
@@ -211,17 +211,14 @@
                 const p = document.createElement('div');
                 p.classList.add('particle');
                 
-                // Random dynamic coordinates
                 const x = (Math.random() - 0.5) * 300;
                 const y = (Math.random() - 0.5) * 300;
                 p.style.setProperty('--x', `${x}px`);
                 p.style.setProperty('--y', `${y}px`);
                 
-                // Random colors for crackers
                 const colors = ['#ff1a53', '#ffd700', '#319795', '#ff4d79', '#00e5ff', '#ff007f'];
                 p.style.background = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Random size & origin positioning
                 const size = Math.random() * 8 + 6;
                 p.style.width = size + 'px';
                 p.style.height = size + 'px';
@@ -250,7 +247,7 @@
             setTimeout(() => {
                 cake.style.transform = 'scaleX(0.9)';
                 cake.innerText = '🍰🍰';
-                txt.innerText = '✨ Beautifully Cut! 🍾 🎉';
+                txt.innerText = '✨ केक कट गया! बधाई हो! 🎉';
                 createFireworkBlast();
             }, 300);
 
@@ -269,5 +266,6 @@
         setInterval(spawnHearts, 450);
     </script>
 </body>
-        </html>
+</html>
+
         
